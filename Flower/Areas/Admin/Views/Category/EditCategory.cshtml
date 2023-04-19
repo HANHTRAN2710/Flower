@@ -1,0 +1,22 @@
+﻿@model Flower.Models.Category
+<h3>Edit Product</h3>
+<form method="post" asp-controller="category" asp-action="edit" enctype="multipart/form-data">
+    <table>
+        <tr>
+            <td>Name</td>
+            <td><input type="text" asp-for="Name" /></td>
+        </tr>
+        
+        <tr>
+            <td>Status</td>
+            <td><input type="checkbox" asp-for="Status" /></td>
+        </tr>
+        
+        <tr>
+            <td>
+                <input type="submit" value="Save" />
+                <input type="hidden" asp-for="Id" />
+            </td>
+        </tr>
+    </table>
+</form>

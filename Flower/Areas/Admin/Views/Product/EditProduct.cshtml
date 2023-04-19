@@ -1,0 +1,55 @@
+﻿
+@model Flower.Models.Product
+<h3>Edit Product</h3>
+<form method="post" asp-controller="product" asp-action="edit" enctype="multipart/form-data">
+    <table>
+        <tr>
+            <td>Name</td>
+            <td><input type="text" asp-for="Name" /></td>
+        </tr>
+        <tr>
+            <td>Price</td>
+            <td><input type="text" asp-for="Price" /></td>
+        </tr>
+        <tr>
+            <td>Quantity</td>
+            <td><input type="text" asp-for="Quantity" /></td>
+        </tr>
+        <tr>
+            <td>Descip</td>
+            <td><textarea cols="20" rows="5" asp-for="Description"></textarea></td>
+        </tr>
+        <tr>
+            <td>Created</td>
+            <td><input type="text" asp-for="Created" asp-format="{0:MM/dd/yyyy}" /></td>
+        </tr>
+        <tr>
+            <td>Status</td>
+            <td><input type="checkbox" asp-for="Status" /></td>
+        </tr>
+        <tr>
+            <td>Photo</td>
+            <td><input type="file" asp-for="Photo" /></td>
+            <br />
+            <img src="~/upload/@Model.Photo" width="120" height="100" />
+        </tr>
+        <tr>
+            <td>Category</td>
+            <td>
+                <select asp-for="CategoryId">
+
+                    @foreach (var category in ViewBag.categories)
+                    {
+                        <option value="@category.Id">@category.Name</option>
+                    }
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="submit" value="Save" />
+                <input type="hidden" asp-for="Id" />
+            </td>
+        </tr>
+    </table>
+</form>

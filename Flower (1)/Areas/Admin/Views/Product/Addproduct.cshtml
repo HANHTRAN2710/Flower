@@ -1,0 +1,53 @@
+﻿@{
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+
+<div class="row">
+    
+    <div class="col-md-12">
+        <h1 style="color:tomato; text-align:center;margin:40px;">New Product </h1>
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-6 ">
+                <div class="input-group input-group-lg ">
+                    <span class="input-group-text" style="width:108px" id="inputGroup-sizing-lg">Name</span>
+                    <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg">
+                </div>
+                <div class="input-group input-group-lg mt-5">
+                    <span class="input-group-text" style="width:108px" id="inputGroup-sizing-lg">Price</span>
+                    <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg">
+                </div>
+                <div class="input-group input-group-lg mt-5">
+                    <span class="input-group-text" style="width:108px" id="inputGroup-sizing-lg">Quantity</span>
+                    <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg">
+                </div>
+                <form method="post" asp-controller="product" asp-action="addproduct">
+                    <tr>
+                        <td>Description</td>
+                        <td><textarea id="editor" cols="10" rows="10"></textarea></td>
+                    </tr>
+                </form>
+                @* <span class="input-group-text mt-5" style="width:108px" >Content</span>
+                <textarea type="text" class="form-control mt-2" rows="7" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg"></textarea>*@
+
+            </div>
+            <div class="col-md-4">
+
+                <div class="input-group mb-3">
+                    <span class="input-group-text" style="height:45px">Category</span>
+                    <select class="form-select">
+                        <option>Choose...</option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                    </select>
+                </div>
+                <form method="post" asp-controller="product" asp-action="upload" enctype="multipart/form-data" class="mt-5"> 
+                    Images <input type="file" name="file" />
+                    <button type="submit" value="upload" class="btn btn-primary mt-5 m-5">Add Product</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

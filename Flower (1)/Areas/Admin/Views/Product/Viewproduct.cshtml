@@ -1,0 +1,49 @@
+﻿@{
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+<div class="row">
+   
+    <div class="col-md-12 ml-5">
+        <h1 class="m-5" style="color:tomato">View Product </h1>
+        <fieldset>
+            <legend>
+                Search By Keyword
+            </legend>
+            <form method="get" asp-controller="product" asp-action="searchByKeyword">
+               <input type="text" name="keyword" value="@ViewBag.keyword" />
+                <input type="submit" value="Search" />
+            </form>
+        </fieldset>
+        <div class="row">
+            
+                <table class="table table-striped">
+                    <tr>
+                        <th>Id</th>
+                        <th>Name</th>
+                        <th>Category</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                        <th>Content</th>
+                        <th>Edit</th>
+                        <th>Status</th>
+
+                    </tr>
+                    @foreach (var product in ViewBag.products)
+                    {
+                        <tr>
+                            <td>@product.Id</td>
+                            <td>@product.Name</td>
+                            <td>
+                                <img src="~/images/@product.Photo" width="120" height="100">
+                            </td>
+                            <td>@product.Price</td>
+                            <td>@product.Created.ToString("dd/MM/yyyy")</td>
+                           
+                        </tr>
+                    }
+                </table>
+           
+        </div>
+
+    </div>
+</div>

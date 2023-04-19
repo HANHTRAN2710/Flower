@@ -1,0 +1,60 @@
+﻿@{
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+@model Flower.Models.Product
+<form method="post" asp-controller="product" asp-action="addproduct" enctype="multipart/form-data">
+    <div class="row">
+        <div class="col-md-12">
+            <h1 style="color:tomato; text-align:center;margin:40px;">New Product </h1>
+            <div class="row">
+                <div class="col-md-2"></div>
+                <div class="col-md-6 ">
+                    <div class="input-group input-group-lg ">
+                        <span class="input-group-text" style="width:108px" id="inputGroup-sizing-lg">Name</span>
+                        <input type="text" class="form-control" asp-for="Name" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg">
+                    </div>
+                    <div class="input-group input-group-lg mt-5">
+                        <span class="input-group-text" style="width:108px" id="inputGroup-sizing-lg">Price</span>
+                        <input type="text" class="form-control" asp-for="Price" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg">
+                    </div>
+                    <div class="input-group input-group-lg mt-5">
+                        <span class="input-group-text" style="width:108px" id="inputGroup-sizing-lg">Quantity</span>
+                        <input type="text" class="form-control" asp-for="Quantity" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg">
+                    </div>
+                    <div style="display:flex; gap:0.5rem; margin-top:15px"  >
+                        <h5>Created </h5><br />
+                        <input type="text" asp-for="Created" asp-format="{0:MM/dd/yyyy}" />
+                       
+                            <h5>Status</h5>
+                            <input type="checkbox" asp-for="Status" />
+                      
+                    </div>
+                    <div>
+                        <h5>Description</h5>
+                        <textarea id="editor" asp-for="Description" cols="80" rows="10"></textarea>
+                    </div>
+
+                    @* <span class="input-group-text mt-5" style="width:108px" >Content</span>
+                    <textarea type="text" class="form-control mt-2" rows="7" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg"></textarea>*@
+
+                </div>
+                <div class="col-md-4">
+
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" style="height:45px">Category</span>
+                        <select asp-for="CategoryId">
+
+                            @foreach (var category in ViewBag.categories)
+                            {
+                                <option value="@category.Id">@category.Name</option>
+                            }
+                        </select>
+                    </div>
+                    Images <input type="file" asp-for="Photo" />
+                    <button type="submit" value="upload" class="btn btn-primary mt-5 m-5">Add Product</button>
+                    @TempData["msg"]
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

@@ -1,0 +1,74 @@
+﻿@{
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+@model Flower.Models.Product
+
+<div class="row">
+
+    <div class="col-md-12 ml-5">
+        <h1 class="m-5" style="color:tomato">View Product </h1>
+       @* <fieldset>
+            <legend>
+                Search By Keyword
+            </legend>
+            <form method="get" asp-controller="product" asp-action="searchByKeyword">
+                <input type="text" name="keyword" value="@ViewBag.keyword" />
+                <input type="submit" value="Search" />
+            </form>
+        </fieldset>*@
+        <fieldset>
+            <legend>
+                Search By Category
+            </legend>
+            <form method="get" asp-controller="product" asp-action="searchByCategory">
+                 <select name="categoryId">
+                    <option value="-1">All</option>
+                    @foreach (var category in ViewBag.categories)
+                    {
+                        <!option value="@category.Id" @(ViewBag.categoryId != null && ViewBag.categoryId == category.Id ? "selected" : "") >@category.Name</!option>
+                    }
+                </select>
+
+                <input type="submit" value="Search" />
+            </form>
+        </fieldset>
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <table class="table table-hover">
+                        <tr>
+                            <th>Id</th>
+                            <th>Name</th>
+                            <th>Images</th>
+                            <th>Price</th>
+                            <th>Quantity</th>
+                            <th>Ceated</th>
+                            <th>Category</th>
+                            <th>Edit</th>
+                            <th>Status</th>
+
+                        </tr>
+                        @foreach (var product in ViewBag.products)
+                        {
+                            <tr>
+                                <td>@product.Id</td>
+                                <td>@product.Name</td>
+                                <td>
+                                    <img src="~/upload/@product.Photo" width="120" height="100">
+                                </td>
+                                <td>@product.Price</td>
+                                <td>@product.Quantity</td>
+
+                                <td>@product.Created.ToString("dd/MM/yyyy")</td>
+                                <td>@product.Category.Name</td>
+                                <td><a asp-controller="product" asp-action="edit" asp-route-id="@product.Id">Edit</a></td>
+                                <td>@(product.Status ? "show" : "hide")</td>
+                            </tr>
+                        }
+                    </table>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

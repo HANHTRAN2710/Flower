@@ -1,0 +1,52 @@
+﻿
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AdminLTE 3 | Log in</title>
+
+    <!-- Google Font: Source Sans Pro -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="~/admin/plugins/fontawesome-free/css/all.min.css">
+    <!-- icheck bootstrap -->
+    <link rel="stylesheet" href="~/admin/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="~/admin/dist/css/adminlte.min.css">
+    <link rel="stylesheet"  href="~/Admin/dist/css/alt/adminlogin.css"/>
+</head>
+<body>
+    <div class="login-box">
+        <h2>Login</h2>
+        <form method="post" asp-controller="account" asp-action="login">
+            <div class="user-box">
+                <input type="text" name="username" required="">
+                <label>Username</label>
+            </div>
+            <div class="user-box">
+                <input type="password" name="password" required="">
+                <label>Password</label>
+            </div>
+            <div>
+                <a href="">
+                    <label>
+                        Forgot Password?
+                    </label>
+                </a>
+            </div>
+            <input style="text-transform: uppercase;" type="submit" value="Submit" />
+            
+            <a style="color:tomato">@ViewBag.alert </a>
+
+            <a asp-controller="account" asp-action="register">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                Register
+            </a>
+        </form>
+    </div>
+</body>
+</html>

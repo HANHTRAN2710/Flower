@@ -1,0 +1,515 @@
+/* Loopple Alert */
+@import url('loopple.css');
+
+.loopple-alert {
+    position: relative;
+    margin-bottom: 16px;
+    padding: 16px 24px;
+    border: 1px solid transparent;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+    .loopple-alert.loopple-alert-gradient-dark {
+        color: #fff;
+        border-color: #45484b;
+        background: linear-gradient(87deg, #212529 0, #212229 100%) !important;
+    }
+
+    .loopple-alert.loopple-alert-dismissible .close {
+        top: 50%;
+        right: 24px;
+        padding: 0;
+        transform: translateY(-50%);
+        opacity: 1;
+        position: absolute;
+        color: inherit;
+        border: 0;
+        background: transparent;
+    }
+
+        .loopple-alert.loopple-alert-dismissible .close span {
+            color: #fff;
+        }
+
+.loopple-fade {
+    transition: opacity 0.15s linear;
+}
+
+/* Loopple Button */
+.loopple-btn {
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    text-align: center;
+    vertical-align: middle;
+    position: relative;
+    transition: all 0.15s ease;
+    padding: 10px 20px;
+    letter-spacing: 0.3px;
+    text-transform: none;
+    will-change: transform;
+}
+
+    .loopple-btn.loopple-btn-white {
+        color: #212529;
+        border-color: #fff;
+        background-color: #fff;
+        box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+    }
+
+        .loopple-btn.loopple-btn-white:hover {
+            color: #212529;
+            border-color: #fff;
+            background-color: #fff;
+        }
+
+        .loopple-btn.loopple-btn-white:focus, .loopple-btn.loopple-btn-white.focus {
+            box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08), 0 0 0 0 rgba(255, 255, 255, 0.5) l;
+        }
+
+        .loopple-btn.loopple-btn-white:not(:disabled):not(.disabled):active, .loopple-btn.loopple-btn-white:not(:disabled):not(.disabled).active {
+            color: #212529;
+            border-color: #fff;
+            background-color: #e6e6e6;
+        }
+
+/* Loopple Utilities */
+.loopple-position-absolute {
+    position: absolute;
+}
+
+.loopple-position-sticky {
+    position: sticky;
+}
+
+.loopple-position-fixed {
+    position: fixed;
+}
+
+.loopple-z-index-9999 {
+    z-index: 9999;
+}
+
+.loopple-bottom-2 {
+    bottom: 8px;
+}
+
+.loopple-mx-auto {
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+.loopple-text-center {
+    text-align: center;
+}
+
+.loopple-right-0 {
+    right: 0;
+}
+
+.loopple-left-0 {
+    left: 0;
+}
+
+.loopple-w-50 {
+    width: 50%;
+}
+
+.loopple-ml-1,
+.loopple-mx-1 {
+    margin-left: 4px;
+}
+
+.loopple-ml-2,
+.loopple-mx-2 {
+    margin-left: 8px;
+}
+
+.loopple-opacity-0 {
+    opacity: 0;
+}
+
+/* Loopple Badge */
+.loopple-badge {
+    position: fixed;
+    font-size: 66%;
+    font-weight: 600;
+    line-height: 1;
+    display: inline-block;
+    background-color: #eaecfb;
+    bottom: 2% !important;
+    right: 1% !important;
+    padding: 5.5px 6px;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    text-align: center;
+    vertical-align: baseline;
+    white-space: nowrap;
+    border-radius: 6px;
+}
+
+#headerflower {
+    position: fixed;
+    width: 100%;
+    z-index: 4;
+    margin-top: 55px;
+}
+
+#navbarflower {
+    position: fixed;
+    width: 100%;
+    z-index: 5;
+}
+/*css trang admin*/
+.adminnav {
+    min-height: 100vh;
+}
+
+h3 {
+    color: tomato;
+    font-size: 200px;
+}
+
+.hinhlogo {
+    display: flex;
+    padding-left: 90px;
+    padding-top: 40px;
+}
+/*chinh css user*/
+.text-lg-start .text-center .justify-content-lg-start .justify-content-center .mb-lg-0 mb-2 a {
+    display: flex;
+}
+/*about*/
+
+.aboutus {
+    background-image: linear-gradient(32deg,#ffffff 40%,rgba(244,229,198,0) 100%),url(https://aangelasfloristcomaadd7.zapwp.com/q:intelligent/r:0/wp:0/w:1/u:https://aangelasflorist.com.au/wp-content/uploads/2018/02/aangelas-florist-flowers-for-all-occasions-2-800pxls.jpg) !important;
+    min-height: 60vh;
+}
+
+    .aboutus h5 {
+        font-size: 50px;
+        font-family: var(--bs-font-sans-serif);
+    }
+
+    .aboutus p {
+        font-size: 20px;
+        margin: 20px;
+        margin-right: 50%;
+        font-family: Cambria, Cochin, Georgia, Times, Times New Roman, serif;
+    }
+
+.aboutus-content img {
+    margin-left: 30%;
+    padding-top: 50px;
+}
+
+.aboutus-content h4 {
+    padding: 50px;
+    font-weight: bold;
+    font-family: var(--bs-font-sans-serif);
+}
+
+.aboutuss h2 {
+    text-align: center;
+    color: tomato;
+    margin-top: 100px;
+    font-family: var(--bs-font-sans-serif);
+}
+
+.aboutus-content p {
+    font-size: 20px;
+    font-family: Cambria, Cochin, Georgia, Times, Times New Roman, serif;
+}
+
+.content-git > div > img {
+    width: 90px;
+    height: 90px;
+    margin: 20px;
+    text-align: center;
+}
+
+.content-git > div > span {
+    color: tomato;
+    font-family: Cambria, Cochin, Georgia, Times, Times New Roman, serif;
+    font-size: 20px;
+}
+
+.content-git p {
+    font-family: Cambria, Cochin, Georgia, Times, Times New Roman, serif;
+    font-size: 18px;
+}
+
+.contactus h2 {
+    margin-top: 150px;
+    color: tomato;
+    text-align: center;
+    font-family: var(--bs-font-sans-serif);
+}
+
+.contactus-content img {
+    min-width: 100vw;
+    min-height: 5vh;
+}
+
+.contactus-content h5 {
+    padding: 5px;
+    color: orange;
+    font-family: var(--bs-font-sans-serif);
+}
+
+.contactus-content p {
+    font-size: 30px;
+    color: blueviolet;
+}
+/*search*/
+/*login*/
+.login-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    padding: 40px;
+    transform: translate(-50%, -50%);
+    background-color: rgb(8, 4, 65, 0.71);
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px rgba(0,0,0,.6);
+    border-radius: 10px;
+}
+
+    .login-box h2 {
+        margin: 0 0 30px;
+        padding: 0;
+        color: #f6f1f1;
+        font-weight: bold;
+        font-size: 40px;
+        text-align: center;
+    }
+
+    .login-box .user-box {
+        position: relative;
+    }
+
+        .login-box .user-box input {
+            width: 100%;
+            padding: 10px 0;
+            font-size: 16px;
+            color: #fff;
+            margin-bottom: 30px;
+            border: none;
+            border-bottom: 1px solid #fff;
+            outline: none;
+            background: transparent;
+        }
+
+        .login-box .user-box label {
+            position: absolute;
+            top: 0;
+            left: 0;
+            padding: 10px 0;
+            font-size: 20px;
+            color: #fff;
+            pointer-events: none;
+            transition: .5s;
+        }
+
+        .login-box .user-box input:focus ~ label,
+        .login-box .user-box input:valid ~ label {
+            top: -20px;
+            left: 0;
+            color: #f68e44;
+            font-size: 18px;
+        }
+
+    .login-box form a {
+        position: relative;
+        display: inline-block;
+        padding: 10px 20px;
+        color: #b79726;
+        font-size: 16px;
+        text-decoration: none;
+        text-transform: uppercase;
+        overflow: hidden;
+        transition: .5s;
+        margin-top: 40px;
+        letter-spacing: 4px
+    }
+
+    .login-box a:hover {
+        background: #f49803;
+        color: #fff;
+        border-radius: 5px;
+        box-shadow: 0 0 5px #f4c803, 0 0 25px #bd9d0b, 0 0 50px #f4e403, 0 0 100px #d5cf1e;
+    }
+
+    .login-box a span {
+        position: absolute;
+        display: block;
+    }
+
+        .login-box a span:nth-child(1) {
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #f4c003);
+            animation: btn-anim1 1s linear infinite;
+        }
+    /*the input submit */
+    .login-box form input {
+        position: relative;
+        display: inline-block;
+        padding: 10px 20px;
+        color: #b79726;
+        font-size: 16px;
+        text-decoration: none;
+        overflow: hidden;
+        transition: .5s;
+        margin-top: 40px;
+        letter-spacing: 4px
+    }
+
+    .login-box input:hover {
+        background: #f49803;
+        color: #fff;
+        border-radius: 5px;
+        box-shadow: 0 0 5px #f4c803, 0 0 25px #bd9d0b, 0 0 50px #f4e403, 0 0 100px #d5cf1e;
+    }
+
+
+
+@keyframes btn-anim1 {
+    0% {
+        left: -100%;
+    }
+
+    50%,100% {
+        left: 100%;
+    }
+}
+
+.login-box a span:nth-child(2) {
+    top: -100%;
+    right: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(180deg, transparent, #f4bc03);
+    animation: btn-anim2 1s linear infinite;
+    animation-delay: .25s
+}
+
+@keyframes btn-anim2 {
+    0% {
+        top: -100%;
+    }
+
+    50%,100% {
+        top: 100%;
+    }
+}
+
+.login-box a span:nth-child(3) {
+    bottom: 0;
+    right: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(270deg, transparent, #f4dc03);
+    animation: btn-anim3 1s linear infinite;
+    animation-delay: .5s
+}
+
+@keyframes btn-anim3 {
+    0% {
+        right: -100%;
+    }
+
+    50%,100% {
+        right: 100%;
+    }
+}
+
+.login-box a span:nth-child(4) {
+    bottom: -100%;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(360deg, transparent, #f4b003);
+    animation: btn-anim4 1s linear infinite;
+    animation-delay: .75s
+}
+
+@keyframes btn-anim4 {
+    0% {
+        bottom: -100%;
+    }
+
+    50%,100% {
+        bottom: 100%;
+    }
+}
+
+/*register*/
+
+/*.login-title {
+    color: whitesmoke;
+    text-align: center;
+    font-family: Cambria, Cochin, Georgia, Times, Times New Roman, serif;
+    font-size: 40px;
+}
+
+.form-group label {
+    font-size: 18px;
+    color: tomato;
+}
+*/
+
+
+/*event decoration*/
+.container-fluid {
+    margin-top: 180px;
+    font-family:'Times New Roman', Times, serif;
+}
+
+    .container-fluid h1 {
+        color: tomato;
+        text-align:center;
+        margin-top:80px;
+        margin-bottom:90px;
+        
+    }
+    /*book now*/
+.booknow a{
+    position: relative;
+    display: inline-block;
+    padding: 10px 20px;
+    color: #ff0000;
+    font-size: 16px;
+    text-decoration: none;
+    margin-top: 40px;
+    letter-spacing: 4px;
+    background-color:#f8cba8;
+    border-radius:5px;
+    
+}
+
+
+.booknow a:hover {
+    background: #f49803;
+    color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #f4c803, 0 0 25px #bd9d0b, 0 0 50px #f4e403, 0 0 100px #d5cf1e;
+}
+.tour{
+   display:flex;
+   justify-content:space-between;
+   margin-top:10px;
+   
+}
+.tour a{
+    text-decoration:none;
+    color:tomato;
+    font-size:18px;
+    margin-top:15px;
+}
+/*search*/

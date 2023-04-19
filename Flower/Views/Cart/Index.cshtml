@@ -1,0 +1,104 @@
+﻿@using Flower.Models;
+@using System.Text.Json;
+@using Microsoft.AspNetCore.Http
+@inject Microsoft.AspNetCore.Http.IHttpContextAccessor HttpContextAccessor
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    List<Item> cart = null;
+    if (HttpContextAccessor.HttpContext.Session.GetString("cart") == null)
+    {
+        cart = new List<Item>();
+    }
+    else
+    {
+        cart = JsonSerializer.Deserialize<List<Item>>
+        (HttpContextAccessor.HttpContext.Session.GetString("cart"));
+    }
+}
+
+
+<a asp-controller="account" asp-action="welcome">Continue Shopping</a>
+<h3 style="margin-top:150px; color:tomato; text-align:center" class="p-3"> Giỏ Hàng </h3>
+<div class="row">
+   
+    <div class="col md-6">
+        <div class="container">
+            @*Gio hang cart*@
+            <div class="card">
+                <div class="card-header">
+                    <h6> Chi tiết đơn hàng</h6>
+                </div>
+                <div class="card-body">
+                    <form method="post" asp-controller="cart" asp-action="update">
+                        <table class="table table-striped">
+                            <tr>
+                                <th>XÓA</th>
+                                <th>HÌNH ẢNH:</th>
+                                <th>TÊN SẢN PHẨM:</th>
+                                <th>SỐ LƯỢNG:</th>
+                                <th>ĐƠN GIÁ:</th>
+
+                            </tr>
+                            @foreach (var item in cart)
+                            {
+                                <tr>
+                                    <td><a asp-controller="cart" asp-action="remove" asp-route-id="@item.Id" onclick="return.confirm('are you sure?')">Xóa</a> </td>
+
+                                    <td>
+                                        <img src="~/upload/@item.Photo" width="120" height="100">
+                                    </td>
+                                    <td>@item.ProductName</td>
+                                    <td>
+                                        <input type="number" min="1" style="width:70px" value="@item.Quantity" name="quantities" />
+                                        <input type="submit"  style="width:70px" value="update" name="quantities" />
+
+                                    </td>
+
+                                    <td>@item.Price USD</td>
+
+
+                                </tr>
+                                 }
+                                <tr>
+                                    <th colspan="4">Thành Tiền </th>
+                                    <th>@ViewBag.total USD</th>
+                                </tr>
+
+
+                           
+
+                        </table>
+
+                    </form>
+
+                </div>
+            </div>
+            @*thong tin nguoi nhan *@
+
+        </div>
+    </div>
+</div>
+<form method="post" action="@ViewBag.postUrl">
+    <input type="hidden" name="upload" value="1" />
+    <input type="hidden" name="return" value="@ViewBag.ReturnUrl" />
+    <input type="hidden" name="cmd" value="_cart" />
+    <input type="hidden" name="business" value="@ViewBag.Business" />
+    @{
+        int index = 1;
+    }
+    @foreach (var item in cart)
+    {
+        <input type="hidden" name="item_number_@index" value="@item.Id">
+        <input type="hidden" name="item_name_@index" value="@item.ProductName">
+        <input type="hidden" name="amount_@index" value="@item.Price">
+        <input type="hidden" name="quantity_@index" value="@item.Quantity">
+        index++;
+    }
+   
+            <input class="form-control"   style="background-color:tomato;" type="submit" value="Xác Nhận Đơn Hàng" />
+
+       
+   
+</form>
+<hr />
+

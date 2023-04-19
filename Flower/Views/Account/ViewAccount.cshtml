@@ -1,0 +1,50 @@
+﻿@{
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+@model Flower.Models.Account
+
+<div class="row">
+
+    <div class="col-md-12 ml-5">
+        <h1 class="m-5" style="color:tomato">View Account </h1>
+        @* <fieldset>
+        <legend>
+        Search By Keyword
+        </legend>
+        <form method="get" asp-controller="product" asp-action="searchByKeyword">
+        <input type="text" name="keyword" value="@ViewBag.keyword" />
+        <input type="submit" value="Search" />
+        </form>
+        </fieldset>*@
+       
+        <div class="row">
+
+            <table class="table table-striped">
+                <tr>
+                    <th>Id</th>
+                    <th>Username</th>
+                    <th>Password</th>
+                    <th>FullName</th>
+                    <th>Email</th>
+                    <th>Status</th>
+
+                </tr>
+                @foreach (var account in ViewBag.accounts)
+                {
+                    <tr>
+                        <td>@account.Id</td>
+                        <td>@account.Username</td>
+
+                        <td>@account.Password</td>
+                        <td>@account.FullName</td>
+                        <td>@account.Email</td>
+
+                        <td>@(account.Status ? "show" : "hide")</td>
+                    </tr>
+                }
+            </table>
+
+        </div>
+
+    </div>
+</div>
